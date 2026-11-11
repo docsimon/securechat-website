@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecureChat Privacy Policy</title>
+<meta name="description" content="What SecureChat keeps, where, and for how long.">
+<style>
+  :root {
+    --bg: #ffffff; --text: #1d1b20; --muted: #5f5a66; --line: #e6e1ea; --accent: #6b2d6e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151317; --text: #ece7f0; --muted: #a8a1b0; --line: #2e2a33; --accent: #d7a6da; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 40px 16px 64px; }
+  a { overflow-wrap: anywhere; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 2.2em 0 0.4em; padding-top: 1.2em; border-top: 1px solid var(--line); }
+  p, li { margin: 0.5em 0; }
+  ul { padding-left: 1.2em; }
+  .updated { color: var(--muted); margin: 0 0 1.6em; }
+  .summary { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; }
+  a { color: var(--accent); }
+  .table { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 0.8em 0; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--line); }
+  th { font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+<h1>SecureChat Privacy Policy</h1>
+<p class="updated">Effective 11 November 2026</p>
+
+<p class="summary">
+  In short: your messages are end-to-end encrypted, pass through our server only
+  while both phones are online, and are never stored there. The server keeps a
+  random account number and what it needs to check the app is genuine, nothing that
+  names you. There are no ads, no analytics, no tracking and no push notifications.
+</p>
+
+<h2>Who is responsible</h2>
+<p>SecureChat is made by Simone Barbara, who is responsible for the data described
+here. For any question about this policy or your data, write to
+<span class="email">securechat.private.messenger at proton.me</span>.</p>
+
+<h2>What stays on your phone</h2>
+<ul>
+  <li>Your SecureChat contacts: the people you have added inside the app, in person
+  (see "Adding a contact"). SecureChat never reads your iPhone's Contacts or address
+  book. For each one: their name, their public key, the name and notes you give them,
+  and when they're usually around.</li>
+  <li>Your messages, and your own name and the times you're usually around.</li>
+  <li>Messages are encrypted on the phone with a key for each contact; the keys and
+  your identity key are in the iPhone's Keychain, on this device only. The database
+  is excluded from iCloud and device backups.</li>
+  <li>Deleting a chat or a contact deletes its key first, so what's left can never be
+  read again.</li>
+</ul>
+
+<h2>What our server keeps</h2>
+<div class="table">
+<table>
+  <tr><th>What</th><th>Why</th><th>How long</th></tr>
+  <tr>
+    <td>A random account number, the id and public key of the App Attest key,
+      a counter, when you registered, and the day your app last connected (a day,
+      not a time)</td>
+    <td>To check that each connection comes from a genuine copy of the app on your
+      phone; the day, to delete accounts nobody uses</td>
+    <td>Until your account is deleted (see "Deleting your data")</td>
+  </tr>
+  <tr>
+    <td>Your public identity key, during registration</td>
+    <td>To complete registration</td>
+    <td>At most 15 minutes</td>
+  </tr>
+  <tr>
+    <td>A session token linked to your account number</td>
+    <td>To let your phone connect to the relay</td>
+    <td>15 minutes</td>
+  </tr>
+  <tr>
+    <td>While your app is connected, in the relay's memory only: a list of codes,
+      one for each contact you haven't blocked. Each code is worked out by your phone
+      and that contact's phone from their keys; nobody else can work it out, and the
+      relay can't tell whom it belongs to.</td>
+    <td>So that only people you have added, and haven't blocked, can reach you or
+      see that you're online</td>
+    <td>Gone when you disconnect; never written to disk or logs</td>
+  </tr>
+  <tr>
+    <td>Your IP address, in the server's memory only</td>
+    <td>To limit how often one address can call the server (protection against
+      abuse)</td>
+    <td>Never written to disk; gone when the server restarts</td>
+  </tr>
+  <tr>
+    <td>Daily totals: accounts registered, deleted and removed for not being used;
+      encrypted pieces of data relayed (messages, receipts and the like, which the server can't tell apart); "not available" answers;
+      connections, and the most at once; requests refused, by reason</td>
+    <td>To see how the service is used and to spot abuse</td>
+    <td>As long as the service runs. They are numbers per day only: no account
+      numbers, addresses, contacts or content.</td>
+  </tr>
+  <tr>
+    <td>The server's own load every 5 minutes: memory, processor, disk, and the total
+      network traffic of the whole server</td>
+    <td>To keep the service working and spot abuse</td>
+    <td>35 days</td>
+  </tr>
+  <tr>
+    <td>Encrypted backups of the account table and the daily totals</td>
+    <td>To recover from a failure</td>
+    <td>14 days</td>
+  </tr>
+</table>
+</div>
+<p>The server keeps no names, phone numbers, email addresses or messages, and writes
+no contacts to disk.</p>
+<p>The SecureChat servers' logs record events (a connection, a refusal, an error)
+without IP addresses, account numbers or message content. The server's operating
+system keeps its firewall and administrator-login records, which include IP
+addresses, for 14 days; using the app doesn't add to them.</p>
+<p>With only a few people using SecureChat, the server's load every 5 minutes shows
+roughly when people are chatting, though not who.</p>
+
+<h2>Messages and being online</h2>
+<ul>
+  <li>Messages travel through the relay end-to-end encrypted, padded to one size, and
+  only while both phones have SecureChat open. If your contact isn't there, the
+  message is not sent and nothing is queued on the server.</li>
+  <li>To deliver them, the relay sees which two account numbers are talking, while
+  they talk. It keeps this in memory only, for the length of the connection.</li>
+  <li>When a message reaches your contact's phone, their phone sends back a small,
+  encrypted receipt, so your app can tell you if a message didn't arrive. Your
+  contact's app learns the same about your phone. The relay can't read a receipt, but
+  from its timing it can tell a receipt from a message someone typed.</li>
+  <li>While SecureChat is open on your phone, your contacts can see that you're
+  available, and when you leave.</li>
+  <li>Contacts you have blocked or deleted, and anyone else, can't reach you or see
+  whether you're online: to them you always look away.</li>
+  <li>When you're usually around reaches only your contacts, end-to-end encrypted.
+  Blocked contacts receive no messages and no times from you.</li>
+</ul>
+<p>What we can't prevent: whoever runs or takes over the server could watch, while
+it happens, which accounts are talking, how much and when, but could not read what
+they say.</p>
+
+<h2>Adding a contact</h2>
+<p>Contacts are added in person: each phone scans the other's code. The code holds
+your public key, your account number and the name you chose; no server is involved.
+The camera is used only for this scan. Anyone who photographs your code learns your
+account number and public key, but can't reach you unless you add them too.</p>
+
+<h2>Why we may use this data</h2>
+<ul>
+  <li>To provide the service you asked for: registration, connecting, delivering
+  messages and receipts, and deleting your account (performance of a contract).</li>
+  <li>To keep the service secure and working: checking the app is genuine, limiting
+  abuse, backups, the daily totals and the server's load (our legitimate interest in
+  running a safe and reliable service).</li>
+</ul>
+<p>The server needs this data to work; without it the app can't be used. No
+decisions about you are made automatically.</p>
+
+<h2>Who else is involved</h2>
+<ul>
+  <li><strong>Apple</strong>: App Attest confirms that the app is genuine, and Apple
+  distributes the app (TestFlight, App Store) under its own privacy policy.</li>
+  <li><strong>Infomaniak</strong> hosts the server in its own data centres in
+  Switzerland, a country the European Union recognises as protecting personal data
+  adequately.</li>
+  <li><strong>Let's Encrypt</strong> issues the server's HTTPS certificate.</li>
+  <li><strong>DuckDNS</strong> provides the server's name for now, and so answers
+  lookups of that name (usually from your internet provider, not from your
+  phone).</li>
+  <li><strong>Proton</strong> (Proton AG, Switzerland) stores the emails you send
+  us.</li>
+  <li><strong>GitHub</strong> hosts this page; like any website host, it sees the
+  address of whoever visits it.</li>
+</ul>
+<p>If you send feedback through TestFlight, or allow your iPhone to share analytics
+with app developers, Apple passes us that feedback and crash reports, which include
+your device model and iOS version. For TestFlight testers, Apple also shows us the
+name and email address the invitation was sent to.</p>
+<p>No data is sold or shared with anyone else, and the app contains no third-party
+analytics, advertising, crash reporting or tracking.</p>
+
+<h2>Deleting your data</h2>
+<ul>
+  <li><strong>Delete Account</strong>, in the app under Me, deletes your account
+  record on the server at once, then everything on your phone: messages, contacts and
+  keys. A session token already issued expires within 15 minutes. Encrypted backups
+  that still hold the record are deleted within 14 days.</li>
+  <li>An account whose app hasn't connected for 12 months is deleted automatically.</li>
+  <li>Deleting SecureChat from your phone without Delete Account removes your chats
+  and contacts. Its keys in the iPhone's Keychain are cleared the next time SecureChat
+  is installed, and a new install starts over with a new account. The old account
+  record stays on the server until it has been unused for 12 months.</li>
+</ul>
+
+<h2>Your rights</h2>
+<p>Depending on where you live (for example under the EU General Data Protection
+Regulation or the Swiss Federal Act on Data Protection), you can ask for access to,
+correction, deletion or a copy of your data, restrict or object to how it's used, and
+complain to your data protection authority. As the server keeps nothing that names
+you, we can act only on a record we can find; Delete Account in the app always works.
+Write to <span class="email">securechat.private.messenger at proton.me</span>.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version is published here with its date.</p>
+<script>
+  // Builds the contact link in the browser, so the page source holds no plain address.
+  document.querySelectorAll(".email").forEach(function (el) {
+    var address = ["securechat.private.messenger", "proton.me"].join("@");
+    var link = document.createElement("a");
+    link.href = "mailto:" + address;
+    link.textContent = address;
+    el.replaceWith(link);
+  });
+</script>
+</main>
+</body>
+</html>
